@@ -1,16 +1,16 @@
 class Resource:
     @staticmethod
-    def className(clazz):
+    def class_name(clazz):
         name = type(clazz).__name__.lower()
         return name + "s"
 
     @staticmethod
-    def instancePath(clazz, id):
-        return "%s/%s" % (Resource.classPath(clazz), id)
+    def instance_path(clazz, id):
+        return "%s/%s" % (Resource.class_path(clazz), id)
 
     @staticmethod
-    def classPath(clazz):
-        return Resource.className(clazz)
+    def class_path(clazz):
+        return Resource.class_name(clazz)
 
     @staticmethod
     def get_settings_path():
