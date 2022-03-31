@@ -1,5 +1,5 @@
-from com.zoho.subscriptions.net.RequestUtil import RequestUtil
-from com.zoho.subscriptions.net.Resource import Resource
+from subscriptions.net.RequestUtil import RequestUtil
+from subscriptions.net.Resource import Resource
 
 
 class Plan:

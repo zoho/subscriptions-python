@@ -5,9 +5,9 @@ import sys
 import jsons as jsons
 import requests
 from urllib.parse import urlencode
-from com.zoho.subscriptions.net import Util
-from com.zoho.subscriptions.net.GenericListParams import Generic_list_params
-from com.zoho.subscriptions.net.ZSClient import ZSClient
+from subscriptions.net import Util
+from subscriptions.net.GenericListParams import GenericListParams
+from subscriptions.net.ZSClient import ZSClient
 
 _logger = logging.getLogger(__name__)
 
@@ -15,7 +15,7 @@ _logger = logging.getLogger(__name__)
 class RequestUtil:
 
     @staticmethod
-    def execute( method, path, classobj=None, params=Generic_list_params()):
+    def execute( method, path, classobj=None, params=GenericListParams()):
         url = "%s/%s" % (ZSClient.get_Base_url(), path)
         headers = dict()
         try:

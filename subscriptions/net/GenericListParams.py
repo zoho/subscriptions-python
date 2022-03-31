@@ -1,7 +1,7 @@
-from com.zoho.subscriptions.net.GenericParams import GenericParams
+from subscriptions.net.GenericParams import GenericParams
 
 
-class Generic_list_params(GenericParams):
+class GenericListParams(GenericParams):
     __defaultParams = None
 
     def __init__(self):
@@ -16,6 +16,6 @@ class Generic_list_params(GenericParams):
 
     def get_default(self):
         if self.__defaultParams is None:
-            self.__defaultParams = Generic_list_params()
+            self.__defaultParams = GenericListParams()
 
         return self.__defaultParams

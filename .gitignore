@@ -1,2 +1,6 @@
 __pycache__
 .idea/
+build
+.eggs
+subscription.egg-info 
+venv
