@@ -1,29 +1,29 @@
 import sys
 
 
-class TypeChecker:
+class ValidateDataType:
 
     @staticmethod
     def class_name(instance,clazz):
         if isinstance(instance, clazz):
             return True
-        raise TypeChecker.error(clazz)
+        raise ValidateDataType.error(clazz)
 
     @staticmethod
     def tuples(instance, clazz):
         if isinstance(instance, clazz):
             return True
         message = clazz[0].__name__ + " or " + clazz[1].__name__
-        raise TypeChecker.string(message)
+        raise ValidateDataType.string(message)
 
     @staticmethod
     def list(instance,instance_type):
         if isinstance(instance,list):
             for value in instance:
                 if not isinstance(value,instance_type):
-                    raise TypeChecker.error(instance_type)
+                    raise ValidateDataType.error(instance_type)
             return True
-        raise TypeChecker.error(list)
+        raise ValidateDataType.error(list)
 
     @staticmethod
     def error(clazz):

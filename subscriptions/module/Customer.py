@@ -2,7 +2,7 @@ from subscriptions import Tag, GenericParams
 from subscriptions.net.GenericListParams import GenericListParams
 from subscriptions.net.RequestUtil import RequestUtil
 from subscriptions.net.Resource import Resource
-from subscriptions.net.TypeChecker import TypeChecker
+from subscriptions.net.ValidateDataType import ValidateDataType
 
 
 class Customer:
@@ -26,7 +26,7 @@ class Customer:
         self.last_name = last_name
 
     def set_tag(self, tag=[]):
-        TypeChecker.list(tag, Tag)
+        ValidateDataType.list(tag, Tag)
         self.tag = tag
 
     def set_company_name(self, company_name):
@@ -36,11 +36,11 @@ class Customer:
         self.phone = phone
 
     def set_billing_address(self, billing_address):
-        TypeChecker.class_name(billing_address,Address)
+        ValidateDataType.class_name(billing_address,Address)
         self.billing_address = billing_address
 
     def set_shipping_address(self, shipping_address):
-        TypeChecker.class_name(shipping_address, Address)
+        ValidateDataType.class_name(shipping_address, Address)
         self.shipping_address = shipping_address
 
     def set_fax(self, fax):
@@ -95,18 +95,18 @@ class Customer:
         self.tax_exemption_code = tax_exemption_code
 
     def set_default_templates(self, default_templates):
-        TypeChecker.list(default_templates, default_templates)
+        ValidateDataType.list(default_templates, default_templates)
         self.default_templates = default_templates
 
     @staticmethod
     def create(customer):
-        TypeChecker.class_name(customer, Customer)
+        ValidateDataType.class_name(customer, Customer)
         return RequestUtil.execute("POST", Resource.class_path(Customer()), customer)
 
     @staticmethod
     def list(parameter=None):
         if parameter is not None:
-            TypeChecker.tuples(parameter, (GenericParams, GenericListParams))
+            ValidateDataType.tuples(parameter, (GenericParams, GenericListParams))
         return RequestUtil.execute("GET", Resource.class_path(Customer()), None, parameter)
 
     @staticmethod
@@ -115,7 +115,7 @@ class Customer:
 
     @staticmethod
     def update(customer, customer_id):
-        TypeChecker.class_name(customer, Customer)
+        ValidateDataType.class_name(customer, Customer)
         return RequestUtil.execute("PUT", Resource.instance_path(Customer(), customer_id), customer)
 
     @staticmethod
