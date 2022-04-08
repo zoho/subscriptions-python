@@ -4,3 +4,4 @@ from subscriptions.module.CustomField import CustomField
 from subscriptions.module.Tag import Tag
 from subscriptions.module.Addon import Addon
 from subscriptions.module.Customer import Customer
+from subscriptions.module.Coupon import Coupon
