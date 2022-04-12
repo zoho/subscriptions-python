@@ -1,5 +1,5 @@
-from subscriptions import Tag, GenericParams
-from subscriptions.net.GenericListParams import GenericListParams
+from subscriptions.module import Tag
+from subscriptions.net.GenericListParams import GenericListParams, GenericParams
 from subscriptions.net.RequestUtil import RequestUtil
 from subscriptions.net.Resource import Resource
 from subscriptions.net.ValidateDataType import ValidateDataType
