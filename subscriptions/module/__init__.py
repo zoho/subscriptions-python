@@ -5,3 +5,5 @@ from subscriptions.module.Tag import Tag
 from subscriptions.module.Addon import Addon
 from subscriptions.module.Customer import Customer
 from subscriptions.module.Coupon import Coupon
+from subscriptions.module.BankAccount import BankAccount
+from subscriptions.module.Card import Card
