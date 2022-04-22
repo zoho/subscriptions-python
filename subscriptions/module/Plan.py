@@ -47,7 +47,7 @@ class Plan:
     def set_account_id(self, account_id):
         self.account_id = account_id
 
-    def set_trial_kperiod(self, trial_period):
+    def set_trial_period(self, trial_period):
         self.trial_period = trial_period
 
     def set_setup_fee(self, setup_fee):

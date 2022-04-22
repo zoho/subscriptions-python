@@ -24,8 +24,13 @@ class RequestUtil:
                 url = '%s?%s' % (url, querStr)
                 payload = None
             else:
-                payload = querStr
-                headers['Content-type'] = 'application/json'
+
+                if url.__contains__("cancel"):
+                    payload = "JSONString="+querStr
+                    headers['Content-type'] = 'application/x-www-form-urlencoded'
+                else:
+                    payload = querStr
+                    headers['Content-type'] = 'application/json'
             return RequestUtil.connection(method, url, payload, headers)
         except Exception as error:
             _logger.critical("Unable to connect to " + url + " due to " + str(error))
