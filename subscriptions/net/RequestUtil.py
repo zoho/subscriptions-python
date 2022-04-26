@@ -25,7 +25,7 @@ class RequestUtil:
                 payload = None
             else:
 
-                if url.__contains__("cancel"):
+                if url.endswith("cancel"):
                     payload = "JSONString="+querStr
                     headers['Content-type'] = 'application/x-www-form-urlencoded'
                 else:
