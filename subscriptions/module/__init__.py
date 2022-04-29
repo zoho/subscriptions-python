@@ -13,4 +13,9 @@ from subscriptions.module.Contactperson import Contactperson
 from subscriptions.module.Subscription import Subscription
 from subscriptions.module.Invoice import Invoice
 from subscriptions.module.Payment import Payment
+from subscriptions.module.Hostedpage import Hostedpage
+from subscriptions.module.Currency import Currency
+from subscriptions.module.CreditNote import CreditNote
+from subscriptions.module.Transaction import Transaction
+from subscriptions.module.Tax import Tax
 
