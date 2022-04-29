@@ -2,6 +2,9 @@ class Resource:
     @staticmethod
     def class_name(clazz):
         name = type(clazz).__name__.lower()
+        if name.endswith("y"):
+            length = len(name)
+            name = name[0:length - 1] + "ie"
         return name + "s"
 
     @staticmethod

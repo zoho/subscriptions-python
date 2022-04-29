@@ -163,6 +163,9 @@ class Subscription:
         return RequestUtil.execute("DELETE",
                                    Resource.instance_path(Subscription(), subscription_id) + "/notes/" + note_id)
 
+    def set_subscription_id(self, subscription_id):
+        self.subscription_id = subscription_id
+
     def set_cancel_at_end(self, cancel_at_end):
         self.cancel_at_end = cancel_at_end
 

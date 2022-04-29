@@ -36,11 +36,11 @@ class Customer:
         self.phone = phone
 
     def set_billing_address(self, billing_address):
-        ValidateDataType.class_name(billing_address,Address)
+        ValidateDataType.class_name(billing_address,Customer.Address)
         self.billing_address = billing_address
 
     def set_shipping_address(self, shipping_address):
-        ValidateDataType.class_name(shipping_address, Address)
+        ValidateDataType.class_name(shipping_address, Customer.Address)
         self.shipping_address = shipping_address
 
     def set_fax(self, fax):
@@ -95,7 +95,7 @@ class Customer:
         self.tax_exemption_code = tax_exemption_code
 
     def set_default_templates(self, default_templates):
-        ValidateDataType.list(default_templates, default_templates)
+        ValidateDataType.list(default_templates, Customer.Default_templates)
         self.default_templates = default_templates
 
     @staticmethod
@@ -130,36 +130,34 @@ class Customer:
     def mark_as_inactive(customer_id):
         return RequestUtil.execute("POST", Resource.instance_path(Customer(), customer_id) + "/markasinactive")
 
+    class Address:
+        def set_attention(self, attention):
+            self.attention = attention
 
-class Address:
-    def set_attention(self, attention):
-        self.attention = attention
+        def set_street(self, street):
+            self.street = street
 
-    def set_street(self, street):
-        self.street = street
+        def set_city(self, city):
+            self.city = city
 
-    def set_city(self, city):
-        self.city = city
+        def set_state(self, state):
+            self.state = state
 
-    def set_state(self, state):
-        self.state = state
+        def set_zip(self, zip):
+            self.zip = zip
 
-    def set_zip(self, zip):
-        self.zip = zip
+        def set_country(self, country):
+            self.country = country
 
-    def set_country(self, country):
-        self.country = country
+        def set_state_code(self, state_code):
+            self.state_code = state_code
 
-    def set_state_code(self, state_code):
-        self.state_code = state_code
+        def set_fax(self, fax):
+            self.fax = fax
 
-    def set_fax(self, fax):
-        self.fax = fax
+    class Default_templates:
+        def set_invoice_template_id(self, template_id):
+            self.invoice_template_id = template_id
 
-
-class default_templates:
-    def set_invoice_template_id(self, template_id):
-        self.invoice_template_id = template_id
-
-    def set_creditnote_template_id(self, creditnote_template_id):
-        self.creditnote_template_id = creditnote_template_id
+        def set_creditnote_template_id(self, creditnote_template_id):
+            self.creditnote_template_id = creditnote_template_id
