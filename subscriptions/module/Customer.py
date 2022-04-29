@@ -95,7 +95,7 @@ class Customer:
         self.tax_exemption_code = tax_exemption_code
 
     def set_default_templates(self, default_templates):
-        ValidateDataType.list(default_templates, default_templates)
+        ValidateDataType.list(default_templates, Customer.Default_templates)
         self.default_templates = default_templates
 
     @staticmethod
@@ -155,7 +155,7 @@ class Customer:
         def set_fax(self, fax):
             self.fax = fax
 
-    class default_templates:
+    class Default_templates:
         def set_invoice_template_id(self, template_id):
             self.invoice_template_id = template_id
 
