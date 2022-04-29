@@ -1,5 +1,7 @@
+from subscriptions.net import GenericParams
 from subscriptions.net.RequestUtil import RequestUtil
 from subscriptions.net.Resource import Resource
+from subscriptions.net.ValidateDataType import ValidateDataType
 
 
 class Plan:
@@ -10,10 +12,13 @@ class Plan:
 
     @staticmethod
     def list(params=None):
+        if params is None:
+            params = GenericParams()
         return RequestUtil.execute("GET", Resource.class_path(Plan()), None, params)
 
     @staticmethod
     def create(plan):
+        ValidateDataType.class_name(plan, Plan)
         return RequestUtil.execute("POST", Resource.class_path(Plan()), plan)
 
     @staticmethod
@@ -26,6 +31,7 @@ class Plan:
 
     @staticmethod
     def update(plan, plan_code):
+        ValidateDataType.class_name(plan, Plan)
         return RequestUtil.execute("PUT", Resource.instance_path(Plan(), plan_code), plan)
 
     @staticmethod
