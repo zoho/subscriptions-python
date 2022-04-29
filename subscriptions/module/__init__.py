@@ -11,3 +11,6 @@ from subscriptions.module.PaymentGateway import PaymentGateway
 from subscriptions.module.Activity import Activity
 from subscriptions.module.Contactperson import Contactperson
 from subscriptions.module.Subscription import Subscription
+from subscriptions.module.Invoice import Invoice
+from subscriptions.module.Payment import Payment
+
