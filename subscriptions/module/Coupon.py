@@ -1,5 +1,6 @@
 from subscriptions.module import Plan, Addon
-from subscriptions.net import GenericListParams, GenericParams
+from subscriptions.net.GenericListParams import GenericListParams
+from subscriptions.net.GenericParams import GenericParams
 from subscriptions.net.RequestUtil import RequestUtil
 from subscriptions.net.Resource import Resource
 from subscriptions.net.ValidateDataType import ValidateDataType
@@ -57,9 +58,8 @@ class Coupon:
         return RequestUtil.execute("POST", Resource.class_path(Coupon()), coupon)
 
     @staticmethod
-    def list(parameter=None):
-        if parameter is not None:
-            ValidateDataType.tuples(parameter, (GenericParams, GenericListParams))
+    def list(parameter=GenericListParams()):
+        ValidateDataType.tuples(parameter, (GenericParams, GenericListParams))
         return RequestUtil.execute("GET", Resource.class_path(Coupon()), None, parameter)
 
     @staticmethod

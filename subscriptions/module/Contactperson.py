@@ -1,5 +1,6 @@
 from subscriptions.module import Customer
-from subscriptions.net import GenericListParams, GenericParams
+from subscriptions.net.GenericListParams import GenericListParams
+from subscriptions.net.GenericParams import GenericParams
 from subscriptions.net.RequestUtil import RequestUtil
 from subscriptions.net.Resource import Resource
 from subscriptions.net.ValidateDataType import ValidateDataType
@@ -9,12 +10,11 @@ class Contactperson:
 
     @staticmethod
     def retrieve(customer_id, contactperson_id):
-        return RequestUtil.execute("GET", Resource.instance_path(Customer(), customer_id)+"/"+ Resource.instance_path(Contactperson(), contactperson_id))
+        return RequestUtil.execute("GET", Resource.instance_path(Customer(), customer_id)+"/" + Resource.instance_path(Contactperson(), contactperson_id))
 
     @staticmethod
-    def list(customer_id, params):
-        if params is not None:
-            ValidateDataType.tuples(params, (GenericParams, GenericListParams))
+    def list(customer_id, params=GenericListParams()):
+        ValidateDataType.tuples(params, (GenericParams, GenericListParams))
         return RequestUtil.execute("GET", Resource.instance_path(Customer(), customer_id)+"/"+Resource.class_path(Contactperson()), None, params)
 
     @staticmethod
