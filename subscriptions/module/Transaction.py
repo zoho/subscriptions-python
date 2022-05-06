@@ -8,7 +8,6 @@ from subscriptions.net.ValidateDataType import ValidateDataType
 class Transaction:
     @staticmethod
     def list(parameter=GenericListParams()):
-        if parameter is not None:
-            ValidateDataType.tuples(parameter, (GenericParams, GenericListParams))
+        ValidateDataType.tuples(parameter, (GenericParams, GenericListParams))
         return RequestUtil.execute("GET", Resource.class_path(Transaction()), None,
                                    parameter)

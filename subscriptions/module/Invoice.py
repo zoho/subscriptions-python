@@ -1,5 +1,6 @@
 from subscriptions.module import CustomField
-from subscriptions.net import GenericParams, GenericListParams
+from subscriptions.net import GenericParams
+from subscriptions.net.GenericListParams import GenericListParams
 from subscriptions.net.RequestUtil import RequestUtil
 from subscriptions.net.Resource import Resource
 from subscriptions.net.ValidateDataType import ValidateDataType
@@ -12,9 +13,8 @@ class Invoice:
         return RequestUtil.execute("GET", Resource.instance_path(Invoice(), invoice_id))
 
     @staticmethod
-    def list(params=None):
-        if params is not None:
-            ValidateDataType.tuples(params, (GenericParams, GenericListParams))
+    def list(params=GenericListParams()):
+        ValidateDataType.tuples(params, (GenericParams, GenericListParams))
         return RequestUtil.execute("GET", Resource.class_path(Invoice()), None, params)
 
     @staticmethod

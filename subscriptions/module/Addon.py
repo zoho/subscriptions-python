@@ -12,9 +12,8 @@ class Addon:
         return RequestUtil.execute("GET", Resource.instance_path(Addon(),addon_id))
 
     @staticmethod
-    def list(params=None):
-        if params is not None:
-            ValidateDataType.tuples(params, (GenericParams, GenericListParams))
+    def list(params=GenericListParams()):
+        ValidateDataType.tuples(params, (GenericParams, GenericListParams))
         return RequestUtil.execute("GET", Resource.class_path(Addon()), None, params)
 
     @staticmethod

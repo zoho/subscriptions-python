@@ -1,4 +1,5 @@
-from subscriptions.net import GenericParams, GenericListParams
+from subscriptions.net import GenericParams
+from subscriptions.net.GenericListParams import GenericListParams
 from subscriptions.net.RequestUtil import RequestUtil
 from subscriptions.net.Resource import Resource
 from subscriptions.net.ValidateDataType import ValidateDataType
@@ -11,11 +12,8 @@ class Plan:
         return RequestUtil.execute("GET", Resource.instance_path(Plan(),plan_code))
 
     @staticmethod
-    def list(params=None):
-        if params is None:
-            params = GenericParams()
-        else:
-            ValidateDataType.tuples(params, (GenericParams, GenericListParams))
+    def list(params=GenericListParams()):
+        ValidateDataType.tuples(params, (GenericParams, GenericListParams))
         return RequestUtil.execute("GET", Resource.class_path(Plan()), None, params)
 
     @staticmethod

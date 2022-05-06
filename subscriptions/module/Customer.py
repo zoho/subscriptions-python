@@ -95,7 +95,7 @@ class Customer:
         self.tax_exemption_code = tax_exemption_code
 
     def set_default_templates(self, default_templates):
-        ValidateDataType.list(default_templates, Customer.Default_templates)
+        ValidateDataType.class_name(default_templates, Customer.Default_templates)
         self.default_templates = default_templates
 
     @staticmethod
@@ -104,9 +104,8 @@ class Customer:
         return RequestUtil.execute("POST", Resource.class_path(Customer()), customer)
 
     @staticmethod
-    def list(parameter=None):
-        if parameter is not None:
-            ValidateDataType.tuples(parameter, (GenericParams, GenericListParams))
+    def list(parameter=GenericListParams()):
+        ValidateDataType.tuples(parameter, (GenericParams, GenericListParams))
         return RequestUtil.execute("GET", Resource.class_path(Customer()), None, parameter)
 
     @staticmethod

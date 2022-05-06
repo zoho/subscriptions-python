@@ -15,7 +15,7 @@ _logger = logging.getLogger(__name__)
 class RequestUtil:
 
     @staticmethod
-    def execute( method, path, classobj=None, params=GenericListParams()):
+    def execute( method, path, classobj=None, params=None):
         url = "%s/%s" % (ZSClient.get_Base_url(), path)
         headers = dict()
         try:
