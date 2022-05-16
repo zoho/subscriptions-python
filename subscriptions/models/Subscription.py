@@ -1,7 +1,7 @@
-from subscriptions.module import Coupon, Card, BankAccount, PaymentGateway
+from subscriptions.models import Coupon, Card, BankAccount, PaymentGateway
 from subscriptions.net.GenericParams import GenericParams
-from subscriptions.module import Customer, CustomField, Tag
-from subscriptions.module.Contactperson import Contactperson
+from subscriptions.models import Customer, CustomField, Tag
+from subscriptions.models.Contactperson import Contactperson
 from subscriptions.net.GenericListParams import GenericListParams
 from subscriptions.net.RequestUtil import RequestUtil
 from subscriptions.net.Resource import Resource

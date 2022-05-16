@@ -1,4 +1,4 @@
-from subscriptions.module.Customer import Customer
+from subscriptions.models.Customer import Customer
 from subscriptions.net.RequestUtil import RequestUtil
 from subscriptions.net.Resource import Resource
 

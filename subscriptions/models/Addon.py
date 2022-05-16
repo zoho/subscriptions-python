@@ -1,4 +1,4 @@
-from subscriptions.module import Plan, CustomField, Tag
+from subscriptions.models import Plan, CustomField, Tag
 from subscriptions.net import GenericParams
 from subscriptions.net.GenericListParams import GenericListParams
 from subscriptions.net.RequestUtil import RequestUtil

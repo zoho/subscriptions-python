@@ -1,4 +1,4 @@
-from subscriptions.module import Customer
+from subscriptions.models import Customer
 from subscriptions.net.GenericListParams import GenericListParams
 from subscriptions.net.GenericParams import GenericParams
 from subscriptions.net.RequestUtil import RequestUtil
