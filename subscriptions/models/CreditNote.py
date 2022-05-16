@@ -1,4 +1,4 @@
-from subscriptions.module import CustomField, Tag, Contactperson
+from subscriptions.models import CustomField, Tag, Contactperson
 from subscriptions.net.RequestUtil import RequestUtil
 from subscriptions.net.Resource import Resource
 from subscriptions.net.ValidateDataType import ValidateDataType

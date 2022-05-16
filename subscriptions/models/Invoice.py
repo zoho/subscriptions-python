@@ -1,4 +1,4 @@
-from subscriptions.module import CustomField
+from subscriptions.models import CustomField
 from subscriptions.net import GenericParams
 from subscriptions.net.GenericListParams import GenericListParams
 from subscriptions.net.RequestUtil import RequestUtil

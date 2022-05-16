@@ -1,4 +1,4 @@
-from subscriptions.module import Plan, Addon
+from subscriptions.models import Plan, Addon
 from subscriptions.net.GenericListParams import GenericListParams
 from subscriptions.net.GenericParams import GenericParams
 from subscriptions.net.RequestUtil import RequestUtil

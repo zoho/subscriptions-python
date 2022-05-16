@@ -1,8 +1,8 @@
-from subscriptions.module.CreditNote import CreditNote
+from subscriptions.models.CreditNote import CreditNote
 from subscriptions.net.RequestUtil import RequestUtil
 from subscriptions.net.Resource import Resource
 from subscriptions.net.ValidateDataType import ValidateDataType
-from subscriptions.module.Payment import Payment
+from subscriptions.models.Payment import Payment
 
 
 class Refund:

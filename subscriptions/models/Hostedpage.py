@@ -1,4 +1,4 @@
-from subscriptions.module import Subscription
+from subscriptions.models import Subscription
 from subscriptions.net.RequestUtil import RequestUtil
 from subscriptions.net.Resource import Resource
 from subscriptions.net.ValidateDataType import ValidateDataType
