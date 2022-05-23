@@ -38,7 +38,7 @@ Example to create a Customer:
 
 object = ZSClient()
 object.set_oathtoken("{{Zoho Subscriptions Oauth Token}}")
-object.set_organization_id("{{Zoho Organization Id}}")\
+object.set_organization_id("{{Zoho Organization Id}}")
 object.set_host("{{Host name}}")
 
 customer = Customer()
